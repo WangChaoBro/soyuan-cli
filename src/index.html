@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数智源前端脚手架</title>
+    <link rel="stylesheet" href="./lib/base.css">
+    <link rel="stylesheet" href="./css/index.min.css">
+    </script>
+    <script type="text/javascript">
+	    (function(doc, win) {
+	        var docEl = doc.documentElement,
+	            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	            recalc = function() {
+	                var clientWidth = docEl.clientWidth;
+	                if (!clientWidth) return;
+	                // if (clientWidth > 750) {
+	                //     clientWidth = 750;
+	                // }
+					docEl.style.fontSize = clientWidth / 19.2 + 'px';
+				};
+	        if (!doc.addEventListener) return;
+	        win.addEventListener(resizeEvt, recalc, false);
+	        doc.addEventListener('DOMContentLoaded', recalc, false);
+	    })(document, window);
+	</script>
+</head>
+<body>
+    <h1>hello,soyuan cli!!!</h1>
+
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./js/index.min.js"></script>
+</body>
+</html>
