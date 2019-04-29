@@ -27,11 +27,11 @@ gulp.task('sass', function() {
 //合并，压缩js
 gulp.task('scripts', function() {
     gulp.src('./src/js/*.js')
-        // .pipe(concat('all.js'))
-        // .pipe(gulp.dest('./dist/js'))
-        // .pipe(rename('all.min.js'))
-        // .pipe(rename({ suffix: '.min' }))
-        // .pipe(uglify())
+        .pipe(concat('all.js'))
+        .pipe(gulp.dest('./dist/js'))
+        .pipe(rename('all.min.js'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
         .pipe(gulp.dest('./dist/js'))
         .pipe(connect.reload());
 });
