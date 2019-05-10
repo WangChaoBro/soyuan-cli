@@ -27,9 +27,9 @@ gulp.task('sass', function() {
 //合并，压缩js
 gulp.task('scripts', function() {
     gulp.src('./src/js/*.js')
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('./dist/js'))
-        .pipe(rename('all.min.js'))
+        // .pipe(concat('all.js'))
+        // .pipe(gulp.dest('./dist/js'))
+        // .pipe(rename('all.min.js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
         .pipe(gulp.dest('./dist/js'))
@@ -88,17 +88,17 @@ gulp.task('server', function() {
         root: './dist',
         port: 8182,
         livereload: true,
-        middleware: function(connect, opt) {
-            return [
-                proxy('/api', {
-                    target: 'http://172.26.1.168:9000',
-                    changeOrigin: true,
-                    pathRewrite: {
-                      '^/api': '/'
-                    }
-                })
-            ]
-        }
+        // middleware: function(connect, opt) {
+        //     return [
+        //         proxy('/api', {
+        //             target: 'http://172.26.1.168:9000',
+        //             changeOrigin: true,
+        //             pathRewrite: {
+        //               '^/api': '/'
+        //             }
+        //         })
+        //     ]
+        // }
     });
 });
 
